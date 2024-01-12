@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabinete Gamer - Loja de Produtos Eletrônicos HRS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #00ff00;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product-details {
+            background-color: #fff;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 70%;
+        }
+
+        .rating {
+    position: absolute;
+    top: 52%;
+    left: 25%;
+    transform: translate(-90%,-100%) rotateY(180deg);
+    display: flex;
+}
+ 
+.rating input {
+    display: none;
+}
+ 
+.rating label {
+    display: block;
+    cursor: pointer;
+    width: 20px; /* Ajuste o tamanho da estrela conforme necessário */
+}
+ 
+.rating label:before {
+    content: '\2605'; /* Código unicode para a estrela cheia */
+    font-family: Arial, sans-serif; /* Altere a fonte conforme necessário */
+    position: relative;
+    display: block;
+    font-size: 20px; /* Ajuste o tamanho da estrela conforme necessário */
+    color: #0e1316;
+}
+ 
+.rating label:after {
+    content: '\2605'; /* Código unicode para a estrela cheia */
+    font-family: Arial, sans-serif; /* Altere a fonte conforme necessário */
+    position: absolute;
+    display: block;
+    font-size: 20px; /* Ajuste o tamanho da estrela conforme necessário */
+    color: #ffff00;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 4px 5px rgba(0, 0, 0, .5);
+}
+ 
+.rating label:hover:after,
+.rating label:hover ~ label:after,
+.rating input:checked ~ label:after {
+    opacity: 1;
+}
+
+        footer {
+            background-color: #333;
+            color: #00ff00;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Loja de Produtos Eletrônicos HRS</h1>
+        <h2>Consoles, jogos, periféricos</h2>
+    </header>
+
+    <section>
+        <div class="product-details">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (7).png" alt="Gabinete Gamer">
+            <h2>Gabinete Gamer</h2>
+            <div class="rating">
+                <input type="radio" name="star" id="star1"><label for="star1"></label>
+                <input type="radio" name="star" id="star2"><label for="star2"></label>
+                <input type="radio" name="star" id="star3"><label for="star3"></label>
+                <input type="radio" name="star" id="star4"><label for="star4"></label>
+                <input type="radio" name="star" id="star5"><label for="star5"></label>
+            </div>
+            <p><strong>Descrição:</strong></p>
+            <li>Marca: Fortrek</li>
+            <li>Modelo: 70570</li>
+            <li>Cor: Preto</li>
+            <li>Baias internas: 3,5''x3 HDD, 2,5''x3 SSD</li>
+            <li>Cooler: Cooler da CPU de até 154mm de altura</li>
+            <li>Dimensões: 375 x 215 x 439mm</li>
+            <li>Multimídia: entrada áudio e microfone, botões power e LED</li>
+            <li>USB: 1x 3.0, 2x 2.0</li>
+            <li>Placa-mãe: ATX/micro ATX/mini-ITX</li>
+            <li>Placa de vídeo: Suportável até 315mm de altura</li>
+            <li>Slots de expansão: 7x PCI</li>
+            <li>RGB: Rainbow</li>
+            <li>Controle RGB: Não acompanha</li>
+            <li>Filtro de ar: Magnético na parte superior e inferior </li>
+            <li>Conector do cooler: AURA</li>
+            <li>Painel frontal: material ABS + malha preta</li>
+            <li>Painel Lateral: direita (acrílico) + esquerda (metal)</li>
+            <li>Garantia: 06 meses</li>
+            <p>R$ <span id="price1">295,56</span></p>
+            <button onclick="addToCart(295.56, 'Gabinete Gamer')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Loja%20HRS.html'">Ir para página de seleção de produto</button>
+            <div id="cart">
+                <h2>Carrinho</h2>
+                <ul id="cartItems"></ul>
+                <p>Total: R$ <span id="totalPrice">0.00</span></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Loja de eletrônicos HRS</p>
+    </footer>
+
+    <script>
+        var cartItems = [];
+        var totalPrice = 0;
+
+        function addToCart(price, productName) {
+            cartItems.push({ price, productName });
+            updateCart();
+        }
+
+        function updateCart() {
+            var cartItemsList = document.getElementById('cartItems');
+            var totalSpan = document.getElementById('totalPrice');
+            totalPrice = 0;
+
+            // Limpa a lista de itens do carrinho
+            cartItemsList.innerHTML = '';
+
+            // Adiciona itens ao carrinho e calcula o preço total
+            cartItems.forEach(item => {
+                var listItem = document.createElement('li');
+                listItem.textContent = `${item.productName} - R$ ${item.price.toFixed(2)}`;
+                cartItemsList.appendChild(listItem);
+                totalPrice += item.price;
+            });
+
+            // Atualiza o preço total na página
+            totalSpan.textContent = totalPrice.toFixed(2);
+        }
+    </script>
+</body>
+</html>

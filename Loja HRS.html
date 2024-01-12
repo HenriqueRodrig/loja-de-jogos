@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Produtos Eletrônicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #00ff00;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px #0000(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 250px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #00ff00;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Loja de Produtos Eletrônicos HRS</h1>
+        <h2>Consoles, jogos, periféricos</h2>
+    </header>
+
+    <section>
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview.png" alt="Produto 1">
+            <h2>Playstation 5</h2>
+            <p>Descrição: Blu-ray Disc, SSD de ultra velocidade, áudio 3D, qualidade 4K.</p>
+            <p>R$ <span id="Playstation 5">4,219.00</span></p>
+            <button onclick="addToCart(4219.00, 'Playstation 5')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%201.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (10).png" alt="Produto 2">
+            <h2>XBOX Series X</h2>
+            <p>Descrição: 1TB SSD, 8 núcleos personalizados Zen 2 CPU, Blu-ray UHD 4K, 8K HDR, 802.11AC WiFi-Cabo HDMI.</p>
+            <p>R$ <span id="price1">4,340.00</span></p>
+            <button onclick="addToCart(4340.00, 'XBOX Series X')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%202.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (3).png" alt="Produto 2">
+            <h2>Playstation 4 Pro</h2>
+            <p>Descrição: Resolução 4K, suporte HDR, CPU: 8x 2.3GHz, GPU: 800MHz, Memória RAM: 8GB.</p>
+            <p>R$ <span id="price1">2,239.57</span></p>
+            <button onclick="addToCart(2239.57, 'Playstation 4 Pro')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%203.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (2).png" alt="Produto 2">
+            <h2>Xbox one</h2>
+            <p>Descrição: 500 GB, 1 controle sem fio original, 1 fonte, 1 cabo HDMI.</p>
+            <p>R$ <span id="price1">1,599.00</span></p>
+            <button onclick="addToCart(1599.00, 'Xbox one')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%204.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (1).png" alt="Produto 2">
+            <h2>The Last of us</h2>
+            <p>Descrição: Jogo The Last of us Remastered parte 1 e 2.</p>
+            <p>R$ <span id="price1">249,90</span></p>
+            <button onclick="addToCart(249.90, 'The Last of us')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%205.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview (2).png" alt="Produto 2">
+            <h2>GOD of WAR Ragnarôk</h2>
+            <p>Descrição: Jogo GOD of WAR Ragnarôk, Midia física, +18, console Playstation 5.</p>
+            <p>R$ <span id="price1">349,90</span></p>
+            <button onclick="addToCart(349.90, 'GOD of WAR Ragnarôk')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%206.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview (3).png" alt="Produto 2">
+            <h2>Halo Infinite</h2>
+            <p>Descrição: Jogo Halo Infinite, Midia física, +16, console XBOX Series X.</p>
+            <p>R$ <span id="price1">306,00</span></p>
+            <button onclick="addToCart(306.00, 'Halo Infinite')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%207.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview (4).png" alt="Produto 2">
+            <h2>Forza Horizon 5</h2>
+            <p>Descrição: Jogo Forza Horizon 5, Midia física, console XBOX Series X.</p>
+            <p>R$ <span id="price1">302,90</span></p>
+            <button onclick="addToCart(302.90, 'Forza Horizon 5')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%208.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview (5).png" alt="Produto 2">
+            <h2>Spider-Man</h2>
+            <p>Descrição: Jogo Marvels Spider-Man GOTY Edition para Playstation 4.</p>
+            <p>R$ <span id="price1">171,83</span></p>
+            <button onclick="addToCart(171.83, 'Spider-Man')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%209.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview (6).png" alt="Produto 2">
+            <h2>GOD of WAR 4</h2>
+            <p>Descrição: Jogo GOD of WAR 4, Midia física, para Playstation 4.</p>
+            <p>R$ <span id="price1">123,00</span></p>
+            <button onclick="addToCart(123.00, 'GOD of WAR 4')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%2010.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview (7).png" alt="Produto 2">
+            <h2>Forza Horizon 3</h2>
+            <p>Descrição: Forza Horizon 3, Midia física, para Xbox one.</p>
+            <p>R$ <span id="price1">161,50</span></p>
+            <button onclick="addToCart(161.50, 'Forza Horizon 3')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%2011.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview (8).png" alt="Produto 2">
+            <h2>Resident evil VILLAGE</h2>
+            <p>Descrição: Resident evil VILLAGE, Midia física,para Xbox one.</p>
+            <p>R$ <span id="price1">249,00</span></p>
+            <button onclick="addToCart(249.00, 'Resident evil VILLAGE')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%2012.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (4).png" alt="Produto 2">
+            <h2>Monitor Warrior Kai 24 Pol.</h2>
+            <p>Descrição: Monitor Warrior Kai 24 Pol. Gamer Curvo 144HZ - MN101.</p>
+            <p>R$ <span id="price1">1,500.00</span></p>
+            <button onclick="addToCart(1500.00, 'Monitor Warrior Kai 24 Pol')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Produto%2013.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview (9).png" alt="Produto 2">
+            <h2>Teclado Gamer Hyperx Alloy</h2>
+            <p>Descrição:Teclado Gamer Hyperx Alloy Origins Core Pbt Hx - Vermelho, É resistente a salpicos, Tipo de teclado: mecânico, Com conector: Gamer, Com fío removível, Medidas: 3.45cm de altura, 36cm de largura e 13.25cm de profundidade.</p>
+            <p>R$ <span id="price1">563,00</span></p>
+            <button onclick="addToCart(563.00, 'Teclado Gamer Hyperx Alloy')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%2014.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (6).png" alt="Produto 2">
+            <h2>Razer Mouse Basilisk</h2>
+            <p>Descrição: Razer Mouse Basilisk, roda de rolagem bem suave ou tátil quando deseja, botão de click tem ajuste de precisão na clicagem assim permitindo melhor desenpenho nos jogos de FPS.</p>
+            <p>R$ <span id="price1">779,90</span></p>
+            <button onclick="addToCart(779.90, 'Razer Mouse Basilisk')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%2015.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (7).png" alt="Produto 2">
+            <h2>Gabinete Gamer</h2>
+            <p>Descrição: Fortrek Mid Tower Black Hawk RGB Preto.</p>
+            <p>R$ <span id="price1">295,56</span></p>
+            <button onclick="addToCart(295.56, 'Gabinete Gamer')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%2016.html'">Ir para página do produto</button>
+        </div>
+        
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview (10).png" alt="Produto 2">
+            <h2>Placa de video Galax</h2>
+            <p>Descrição: GEFORCE RTX 2060 plus, 1-click oc,12GB, GDDR6, DLSS, RAY TRACING, @¨NRL7HP68NC</p>
+            <p>R$ <span id="price1">2,469.05</span></p>
+            <button onclick="addToCart(2469.05, 'Placa de video Galax')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%2017.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\download-removebg-preview (11).png" alt="Produto 2">
+            <h2>Placa mãe</h2>
+            <p>Descrição: Placa mãe GIGABYTE B450M Gaming chipset B450 AMD AM4 MATX DDR4.</p>
+            <p>R$ <span id="price1">649,90</span></p>
+            <button onclick="addToCart(649.90, 'Placa mãe')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%2018.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (8).png" alt="Produto 2">
+            <h2>Processador AMD Ryzen</h2>
+            <p>Descrição: Processador AMD Ryzen 7 5700G, 3.80GHz, 8-Core, 16MB,AM4.</p>
+            <p>R$ <span id="price1">1,499.00</span></p>
+            <button onclick="addToCart(1499.99, 'Processador AMD Ryzen')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%2019.html'">Ir para página do produto</button>
+        </div>
+
+        <div class="product">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (9).png" alt="Produto 2">
+            <h2>UP SSD</h2>
+            <p>Descrição:SSD M.2 UP Gamer Ultra 7000, 1TB, Gen 3 NVME.</p>
+            <p>R$ <span id="price1">48,99</span></p>
+            <button onclick="addToCart(48.99, 'UP SSD')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Página%2020.html'">Ir para página do produto</button>
+        </div>
+        <div id="cart">
+            <h2>Carrinho</h2>
+            <ul id="cartItems"></ul>
+            <p>Total: R$ <span id="totalPrice">0.00</span></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Carrinho de Compras</p>
+    </footer>
+
+    <script>
+        var cartItems = [];
+        var totalPrice = 0;
+
+        function addToCart(price, productName) {
+            cartItems.push({ price, productName });
+            updateCart();
+        }
+
+        function updateCart() {
+            var cartItemsList = document.getElementById('cartItems');
+            var totalSpan = document.getElementById('totalPrice');
+            totalPrice = 0;
+
+            // Limpa a lista de itens do carrinho
+            cartItemsList.innerHTML = '';
+
+            // Adiciona itens ao carrinho e calcula o preço total
+            cartItems.forEach(item => {
+                var listItem = document.createElement('li');
+                listItem.textContent = `${item.productName} - R$ ${item.price.toFixed(2)}`;
+                cartItemsList.appendChild(listItem);
+                totalPrice += item.price;
+            });
+
+            // Atualiza o preço total na página
+            totalSpan.textContent = totalPrice.toFixed(2);
+        }
+    </script>
+</body>
+</html>
+

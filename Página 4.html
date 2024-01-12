@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XBOX one - Loja de Produtos Eletrônicos HRS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #00ff00;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product-details {
+            background-color: #fff;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 70%;
+            position: relative; /* Adicionado para posicionar elementos filhos relativos a este container */
+        }
+
+        .rating {
+            position: absolute;
+            top: 52%;
+            left: 25%;
+            transform: translate(-90%, -100%) rotateY(180deg);
+            display: flex;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            display: block;
+            cursor: pointer;
+            width: 20px; /* Ajuste o tamanho da estrela conforme necessário */
+        }
+
+        .rating label:before {
+            content: '\2605'; /* Código unicode para a estrela cheia */
+            font-family: Arial, sans-serif; /* Altere a fonte conforme necessário */
+            position: relative;
+            display: block;
+            font-size: 20px; /* Ajuste o tamanho da estrela conforme necessário */
+            color: #0e1316;
+        }
+
+        .rating label:after {
+            content: '\2605'; /* Código unicode para a estrela cheia */
+            font-family: Arial, sans-serif; /* Altere a fonte conforme necessário */
+            position: absolute;
+            display: block;
+            font-size: 20px; /* Ajuste o tamanho da estrela conforme necessário */
+            color: #ffff00;
+            top: 0;
+            opacity: 0;
+            transition: .5s;
+            text-shadow: 0 4px 5px rgba(0, 0, 0, .5);
+        }
+
+        .rating label:hover:after,
+        .rating label:hover ~ label:after,
+        .rating input:checked ~ label:after {
+            opacity: 1;
+        }
+
+        .comments-section {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30%;
+            padding-left: 10px;
+        }
+
+        .comments-section h2 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #00ff00;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Loja de Produtos Eletrônicos HRS</h1>
+        <h2>Consoles, jogos, periféricos</h2>
+    </header>
+
+    <section>
+        <div class="product-details">
+            <img src="c:\Users\928609\Downloads\images-removebg-preview (2).png" alt="XBOX one">
+            <div class="rating">
+                <input type="radio" name="star" id="star1"><label for="star1"></label>
+                <input type="radio" name="star" id="star2"><label for="star2"></label>
+                <input type="radio" name="star" id="star3"><label for="star3"></label>
+                <input type="radio" name="star" id="star4"><label for="star4"></label>
+                <input type="radio" name="star" id="star5"><label for="star5"></label>
+            </div>
+            <h2>XBOX one</h2>
+            <p><strong>Descrição:</strong></p>
+            <li>Processador x86-64 AMD APU "Jaguar" Octa-Core 1,75 até 2,86 GHz.</li>
+            <li>8GB de memória RAM DDR3; e 32MB da ESRAM.</li>
+            <li>GPU AMD Radeon GCN 768 cores 853 MHz 1,31 TFLOPS.</li>
+            <li>Joystick padrão do Xbox One.</li>
+            <li>HD de 500GB.</li>
+            <li>Mídia física em Blu-Ray (jogos e filmes) e DVD (jogos do Xbox 360 e filmes).</li>
+            <li>7.1 surround sound;[27] Dolby Atmos[28].</li>
+            <li>Suporte a atualização variável a 120 Hz.</li>
+            <p>R$ <span id="price1">1.599,00</span></p>
+            <button onclick="addToCart(1599.00, 'Xbox one')">Adicionar ao Carrinho</button>
+            <button id="buttonLink" onclick="window.location.href='file:///C:/Users/928609/OneDrive%20-%20SENAC%20em%20Minas%20-%20EDU/Área%20de%20Trabalho/Loja%20HRS.html'">Ir para página de seleção de produto</button>
+            <div id="cart">
+                <h2>Carrinho</h2>
+                <ul id="cartItems"></ul>
+                <p>Total: R$ <span id="totalPrice">0.00</span></p>
+            </div>
+
+            <!-- Seção de Comentários -->
+            <div class="comments-section">
+                <h2>Comentários</h2>
+                <form onsubmit="addComment(event)">
+                    <label for="comment">Escreva seu comentário:</label>
+                    <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+                    <br>
+                    <button type="submit">Adicionar Comentário</button>
+                </form>
+                <ul id="commentsList"></ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Loja de eletrônicos HRS</p>
+    </footer>
+
+    <script>
+       
